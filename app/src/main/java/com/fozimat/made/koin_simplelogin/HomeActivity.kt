@@ -5,19 +5,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.fozimat.made.koin_simplelogin.databinding.ActivityHomeBinding
+import org.koin.android.ext.android.inject
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
-    private lateinit var userRepository: UserRepository
+    private val userRepository: UserRepository by inject()
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val sesi = SessionManager(this)
-        userRepository = UserRepository.getInstance(sesi)
 
         binding.tvWelcome.text = "Welcome ${userRepository.getUser()}"
 
