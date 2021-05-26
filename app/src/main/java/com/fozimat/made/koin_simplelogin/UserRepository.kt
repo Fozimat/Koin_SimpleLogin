@@ -1,15 +1,10 @@
 package com.fozimat.made.koin_simplelogin
 
-class UserRepository(private val sesi: SessionManager) {
-    companion object {
-        @Volatile
-        private var instance: UserRepository? = null
+import javax.inject.Inject
+import javax.inject.Singleton
 
-        fun getInstance(sesi: SessionManager): UserRepository =
-            instance ?: synchronized(this) {
-                instance ?: UserRepository(sesi)
-            }
-    }
+@Singleton
+class UserRepository @Inject constructor(private val sesi: SessionManager) {
 
     fun loginUser(username: String) {
         sesi.createLoginSession()
