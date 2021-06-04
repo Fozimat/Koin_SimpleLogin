@@ -1,4 +1,4 @@
-package com.fozimat.made.koin_simplelogin
+package com.fozimat.core
 
 import android.content.Context
 import android.content.SharedPreferences

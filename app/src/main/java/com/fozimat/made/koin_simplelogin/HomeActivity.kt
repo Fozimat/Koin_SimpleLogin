@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.fozimat.core.SessionManager
+import com.fozimat.core.UserRepository
 import com.fozimat.made.koin_simplelogin.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {

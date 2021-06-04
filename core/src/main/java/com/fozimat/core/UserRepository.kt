@@ -1,4 +1,4 @@
-package com.fozimat.made.koin_simplelogin
+package com.fozimat.core
 
 class UserRepository(private val sesi: SessionManager) {
     companion object {
